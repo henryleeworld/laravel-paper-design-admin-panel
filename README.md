@@ -34,8 +34,8 @@ $ npm run build
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/dtdg04B.png)
+![](https://i.imgur.com/KLkyE0n.png)
 > 使用現有的帳號登入
 
-![](https://i.imgur.com/0pupPk1.png)
+![](https://i.imgur.com/lf3k0LC.png)
 > 判斷一個使用者是否可以執行特定行為

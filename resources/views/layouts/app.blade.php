@@ -62,13 +62,26 @@
                             </form>-->
                             <ul class="navbar-nav">
                                 <li class="nav-item btn-rotate dropdown">
-                                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarLanguageDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="nc-icon nc-world-2"></i>
+                                        <p>
+                                            <span class="d-lg-none d-md-block">{{ strtoupper(app()->getLocale()) }}</span>
+                                        </p>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarLanguageDropdownMenuLink">
+                                        @foreach(config('panel.available_languages') as $langLocale => $langName)
+                                        <a class="dropdown-item" href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }} ({{ $langName }})</a>
+                                        @endforeach
+                                    </div>
+                                </li>
+                                <li class="nav-item btn-rotate dropdown">
+                                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarAccountDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="nc-icon nc-settings-gear-65"></i>
                                         <p>
                                             <span class="d-lg-none d-md-block">{{ __('Account') }}</span>
                                         </p>
                                     </a>
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarAccountDropdownMenuLink">
                                         <form class="dropdown-item" action="{{ route('logout') }}" id="formLogOut" method="POST" style="display: none;">
                                             @csrf
                                         </form>
