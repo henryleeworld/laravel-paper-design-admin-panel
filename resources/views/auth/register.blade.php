@@ -79,7 +79,7 @@
                                         </span>
                                     @endif
                                 </div>
-                                <div class="form-check text-left">
+                                <!--<div class="form-check text-left">
                                     <label class="form-check-label">
                                         <input class="form-check-input" name="agree_terms_and_conditions" type="checkbox">
                                         <span class="form-check-sign"></span>
@@ -91,7 +91,7 @@
                                             <strong>{{ $errors->first('agree_terms_and_conditions') }}</strong>
                                         </span>
                                     @endif
-                                </div>
+                                </div>-->
                                 <div class="card-footer ">
                                     <button type="submit" class="btn btn-info btn-round">{{ __('Get Started') }}</button>
                                 </div>
