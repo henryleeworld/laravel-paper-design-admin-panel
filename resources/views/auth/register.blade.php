@@ -27,39 +27,39 @@
                         <div class="card-body ">
                             <form class="form" method="POST" action="{{ route('register') }}">
                                 @csrf
-                                <div class="input-group{{ $errors->has('name') ? ' has-danger' : '' }}">
+                                <div class="input-group {{ $errors->has('name') ? ' has-danger' : '' }}">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">
                                             <i class="nc-icon nc-single-02"></i>
                                         </span>
                                     </div>
-                                    <input name="name" type="text" class="form-control" placeholder="{{ __('Name') }}" value="{{ old('name') }}" required autofocus>
+                                    <input name="name" type="text" class="form-control @error('name') is-invalid @enderror" placeholder="{{ __('Name') }}" value="{{ old('name') }}" required autocomplete="name" autofocus>
                                     @if ($errors->has('name'))
                                         <span class="invalid-feedback" style="display: block;" role="alert">
                                             <strong>{{ $errors->first('name') }}</strong>
                                         </span>
                                     @endif
                                 </div>
-                                <div class="input-group{{ $errors->has('email') ? ' has-danger' : '' }}">
+                                <div class="input-group {{ $errors->has('email') ? ' has-danger' : '' }}">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">
                                             <i class="nc-icon nc-email-85"></i>
                                         </span>
                                     </div>
-                                    <input name="email" type="email" class="form-control" placeholder="{{ __('Email') }}" required value="{{ old('email') }}">
+                                    <input id="email" name="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="{{ __('Email') }}" value="{{ old('email') }}" required autocomplete="email">
                                     @if ($errors->has('email'))
                                         <span class="invalid-feedback" style="display: block;" role="alert">
                                             <strong>{{ $errors->first('email') }}</strong>
                                         </span>
                                     @endif
                                 </div>
-                                <div class="input-group{{ $errors->has('password') ? ' has-danger' : '' }}">
+                                <div class="input-group {{ $errors->has('password') ? ' has-danger' : '' }}">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">
                                             <i class="nc-icon nc-key-25"></i>
                                         </span>
                                     </div>
-                                    <input name="password" type="password" class="form-control" placeholder="{{ __('Password') }}" required>
+                                    <input id="password" name="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="{{ __('Password') }}" required autocomplete="new-password">
                                     @if ($errors->has('password'))
                                         <span class="invalid-feedback" style="display: block;" role="alert">
                                             <strong>{{ $errors->first('password') }}</strong>
@@ -72,7 +72,7 @@
                                             <i class="nc-icon nc-key-25"></i>
                                         </span>
                                     </div>
-                                    <input name="password_confirmation" type="password" class="form-control" placeholder="{{ __('Password confirmation') }}" required>
+                                    <input id="password-confirm" name="password_confirmation" type="password" class="form-control" placeholder="{{ __('Password confirmation') }}" required autocomplete="new-password">
                                     @if ($errors->has('password_confirmation'))
                                         <span class="invalid-feedback" style="display: block;" role="alert">
                                             <strong>{{ $errors->first('password_confirmation') }}</strong>

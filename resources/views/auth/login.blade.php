@@ -23,7 +23,7 @@
                                         <i class="nc-icon nc-single-02"></i>
                                     </span>
                                 </div>
-                                <input class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email') }}" type="email" name="email" value="{{ old('email') }}" required autofocus>
+                                <input class="form-control @error('email') is-invalid @enderror" placeholder="{{ __('Email') }}" type="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                                 
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback" style="display: block;" role="alert">
@@ -38,7 +38,7 @@
                                         <i class="nc-icon nc-single-02"></i>
                                     </span>
                                 </div>
-                                <input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="{{ __('Password') }}" type="password" required>
+                                <input class="form-control @error('password') is-invalid @enderror" name="password" placeholder="{{ __('Password') }}" type="password" required autocomplete="current-password">
                                 
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback" style="display: block;" role="alert">
@@ -50,7 +50,7 @@
                             <div class="mb-3">
                                 <div class="form-check">
                                      <label class="form-check-label">
-                                        <input class="form-check-input" name="remember" type="checkbox" value="" {{ old('remember') ? 'checked' : '' }}>
+                                        <input class="form-check-input" name="remember" type="checkbox" id="remember" {{ old('remember') ? 'checked' : '' }}>
                                         <span class="form-check-sign"></span>
                                         {{ __('Remember me') }}
                                     </label>
