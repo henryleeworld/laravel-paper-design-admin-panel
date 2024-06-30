@@ -4,10 +4,9 @@
             <nav class="footer-nav">
             </nav>
             <div class="credits ml-auto">
-                <span class="copyright">
-                    ©
-                    <script>
-                        document.write(new Date().getFullYear())
+                <span id="copyright" class="copyright">
+                    ©<script>
+                        document.getElementById("copyright").appendChild(document.createTextNode(new Date().getFullYear()));
                     </script>{{ __(' by ') }}<span class="@if(Auth::guest()) text-white @endif">{{ __('Henry Lee') }}</span>
                 </span>
             </div>
